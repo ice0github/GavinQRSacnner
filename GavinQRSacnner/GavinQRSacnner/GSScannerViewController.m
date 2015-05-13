@@ -55,7 +55,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    [self setupCamera];
+    [self setupCamera];
 }
 
 -(void)buildUI{
