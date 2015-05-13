@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D85A96D71AFB06100016F779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A96D61AFB06100016F779 /* main.m */; };
+		D85A96DA1AFB06100016F779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A96D91AFB06100016F779 /* AppDelegate.m */; };
+		D85A96E01AFB06100016F779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85A96DE1AFB06100016F779 /* Main.storyboard */; };
+		D85A96E21AFB06100016F779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85A96E11AFB06100016F779 /* Images.xcassets */; };
+		D85A96E51AFB06100016F779 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85A96E31AFB06100016F779 /* LaunchScreen.xib */; };
+		D85A96F11AFB06100016F779 /* GavinQRSacnnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A96F01AFB06100016F779 /* GavinQRSacnnerTests.m */; };
+		D85A971C1AFB07790016F779 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A971B1AFB07790016F779 /* AVFoundation.framework */; };
+		D85A971E1AFB078C0016F779 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A971D1AFB078C0016F779 /* CoreMedia.framework */; };
+		D85A97201AFB07930016F779 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A971F1AFB07930016F779 /* CoreVideo.framework */; };
+		D85A97221AFB079B0016F779 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A97211AFB079B0016F779 /* QuartzCore.framework */; };
+		D85A97241AFB07AB0016F779 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */; };
+		D85A972A1AFB18500016F779 /* GSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A97291AFB18500016F779 /* GSScannerViewController.m */; };
+		D85A972D1AFB1D5A0016F779 /* bg_scanner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */; };
+		D85A972F1AFB265A0016F779 /* icon_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A972E1AFB265A0016F779 /* icon_loading@2x.png */; };
+		D8C122181B020162002335F4 /* GSBuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C122171B020162002335F4 /* GSBuilderViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D85A96EB1AFB06100016F779 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D85A96C91AFB060F0016F779 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D85A96D01AFB060F0016F779;
+			remoteInfo = GavinQRSacnner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D85A96D11AFB06100016F779 /* GavinQRSacnner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GavinQRSacnner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D85A96D51AFB06100016F779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85A96D61AFB06100016F779 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D85A96D81AFB06100016F779 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D85A96D91AFB06100016F779 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D85A96DF1AFB06100016F779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D85A96E11AFB06100016F779 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D85A96E41AFB06100016F779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D85A96EA1AFB06100016F779 /* GavinQRSacnnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GavinQRSacnnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D85A96EF1AFB06100016F779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85A96F01AFB06100016F779 /* GavinQRSacnnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GavinQRSacnnerTests.m; sourceTree = "<group>"; };
+		D85A971B1AFB07790016F779 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D85A971D1AFB078C0016F779 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D85A971F1AFB07930016F779 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D85A97211AFB079B0016F779 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = usr/lib/libiconv.2.4.0.dylib; sourceTree = SDKROOT; };
+		D85A97281AFB18500016F779 /* GSScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSScannerViewController.h; sourceTree = "<group>"; };
+		D85A97291AFB18500016F779 /* GSScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerViewController.m; sourceTree = "<group>"; };
+		D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_scanner@2x.png"; sourceTree = "<group>"; };
+		D85A972E1AFB265A0016F779 /* icon_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_loading@2x.png"; sourceTree = "<group>"; };
+		D8C122161B020162002335F4 /* GSBuilderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBuilderViewController.h; sourceTree = "<group>"; };
+		D8C122171B020162002335F4 /* GSBuilderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSBuilderViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D85A96CE1AFB060F0016F779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D85A97241AFB07AB0016F779 /* libiconv.2.4.0.dylib in Frameworks */,
+				D85A97221AFB079B0016F779 /* QuartzCore.framework in Frameworks */,
+				D85A97201AFB07930016F779 /* CoreVideo.framework in Frameworks */,
+				D85A971E1AFB078C0016F779 /* CoreMedia.framework in Frameworks */,
+				D85A971C1AFB07790016F779 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85A96E71AFB06100016F779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D85A96C81AFB060F0016F779 = {
+			isa = PBXGroup;
+			children = (
+				D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */,
+				D85A97211AFB079B0016F779 /* QuartzCore.framework */,
+				D85A971F1AFB07930016F779 /* CoreVideo.framework */,
+				D85A971D1AFB078C0016F779 /* CoreMedia.framework */,
+				D85A971B1AFB07790016F779 /* AVFoundation.framework */,
+				D85A96D31AFB06100016F779 /* GavinQRSacnner */,
+				D85A96ED1AFB06100016F779 /* GavinQRSacnnerTests */,
+				D85A96D21AFB06100016F779 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D85A96D21AFB06100016F779 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D85A96D11AFB06100016F779 /* GavinQRSacnner.app */,
+				D85A96EA1AFB06100016F779 /* GavinQRSacnnerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D85A96D31AFB06100016F779 /* GavinQRSacnner */ = {
+			isa = PBXGroup;
+			children = (
+				D85A972B1AFB1D5A0016F779 /* Resources */,
+				D85A96D81AFB06100016F779 /* AppDelegate.h */,
+				D85A96D91AFB06100016F779 /* AppDelegate.m */,
+				D85A97281AFB18500016F779 /* GSScannerViewController.h */,
+				D85A97291AFB18500016F779 /* GSScannerViewController.m */,
+				D8C122161B020162002335F4 /* GSBuilderViewController.h */,
+				D8C122171B020162002335F4 /* GSBuilderViewController.m */,
+				D85A96DE1AFB06100016F779 /* Main.storyboard */,
+				D85A96E11AFB06100016F779 /* Images.xcassets */,
+				D85A96E31AFB06100016F779 /* LaunchScreen.xib */,
+				D85A96D41AFB06100016F779 /* Supporting Files */,
+			);
+			path = GavinQRSacnner;
+			sourceTree = "<group>";
+		};
+		D85A96D41AFB06100016F779 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D85A96D51AFB06100016F779 /* Info.plist */,
+				D85A96D61AFB06100016F779 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D85A96ED1AFB06100016F779 /* GavinQRSacnnerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D85A96F01AFB06100016F779 /* GavinQRSacnnerTests.m */,
+				D85A96EE1AFB06100016F779 /* Supporting Files */,
+			);
+			path = GavinQRSacnnerTests;
+			sourceTree = "<group>";
+		};
+		D85A96EE1AFB06100016F779 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D85A96EF1AFB06100016F779 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D85A972B1AFB1D5A0016F779 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D85A972E1AFB265A0016F779 /* icon_loading@2x.png */,
+				D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D85A96D01AFB060F0016F779 /* GavinQRSacnner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D85A96F41AFB06100016F779 /* Build configuration list for PBXNativeTarget "GavinQRSacnner" */;
+			buildPhases = (
+				D85A96CD1AFB060F0016F779 /* Sources */,
+				D85A96CE1AFB060F0016F779 /* Frameworks */,
+				D85A96CF1AFB060F0016F779 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GavinQRSacnner;
+			productName = GavinQRSacnner;
+			productReference = D85A96D11AFB06100016F779 /* GavinQRSacnner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D85A96E91AFB06100016F779 /* GavinQRSacnnerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D85A96F71AFB06100016F779 /* Build configuration list for PBXNativeTarget "GavinQRSacnnerTests" */;
+			buildPhases = (
+				D85A96E61AFB06100016F779 /* Sources */,
+				D85A96E71AFB06100016F779 /* Frameworks */,
+				D85A96E81AFB06100016F779 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D85A96EC1AFB06100016F779 /* PBXTargetDependency */,
+			);
+			name = GavinQRSacnnerTests;
+			productName = GavinQRSacnnerTests;
+			productReference = D85A96EA1AFB06100016F779 /* GavinQRSacnnerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D85A96C91AFB060F0016F779 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GS;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Gavin;
+				TargetAttributes = {
+					D85A96D01AFB060F0016F779 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4LK626QHZK;
+					};
+					D85A96E91AFB06100016F779 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = D85A96D01AFB060F0016F779;
+					};
+				};
+			};
+			buildConfigurationList = D85A96CC1AFB060F0016F779 /* Build configuration list for PBXProject "GavinQRSacnner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D85A96C81AFB060F0016F779;
+			productRefGroup = D85A96D21AFB06100016F779 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D85A96D01AFB060F0016F779 /* GavinQRSacnner */,
+				D85A96E91AFB06100016F779 /* GavinQRSacnnerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D85A96CF1AFB060F0016F779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D85A972D1AFB1D5A0016F779 /* bg_scanner@2x.png in Resources */,
+				D85A96E01AFB06100016F779 /* Main.storyboard in Resources */,
+				D85A972F1AFB265A0016F779 /* icon_loading@2x.png in Resources */,
+				D85A96E51AFB06100016F779 /* LaunchScreen.xib in Resources */,
+				D85A96E21AFB06100016F779 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85A96E81AFB06100016F779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D85A96CD1AFB060F0016F779 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C122181B020162002335F4 /* GSBuilderViewController.m in Sources */,
+				D85A972A1AFB18500016F779 /* GSScannerViewController.m in Sources */,
+				D85A96DA1AFB06100016F779 /* AppDelegate.m in Sources */,
+				D85A96D71AFB06100016F779 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85A96E61AFB06100016F779 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D85A96F11AFB06100016F779 /* GavinQRSacnnerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D85A96EC1AFB06100016F779 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D85A96D01AFB060F0016F779 /* GavinQRSacnner */;
+			targetProxy = D85A96EB1AFB06100016F779 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D85A96DE1AFB06100016F779 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D85A96DF1AFB06100016F779 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D85A96E31AFB06100016F779 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D85A96E41AFB06100016F779 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D85A96F21AFB06100016F779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D85A96F31AFB06100016F779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D85A96F51AFB06100016F779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D85A96F61AFB06100016F779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D85A96F81AFB06100016F779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GavinQRSacnnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GavinQRSacnner.app/GavinQRSacnner";
+			};
+			name = Debug;
+		};
+		D85A96F91AFB06100016F779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GavinQRSacnnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GavinQRSacnner.app/GavinQRSacnner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D85A96CC1AFB060F0016F779 /* Build configuration list for PBXProject "GavinQRSacnner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D85A96F21AFB06100016F779 /* Debug */,
+				D85A96F31AFB06100016F779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D85A96F41AFB06100016F779 /* Build configuration list for PBXNativeTarget "GavinQRSacnner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D85A96F51AFB06100016F779 /* Debug */,
+				D85A96F61AFB06100016F779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D85A96F71AFB06100016F779 /* Build configuration list for PBXNativeTarget "GavinQRSacnnerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D85A96F81AFB06100016F779 /* Debug */,
+				D85A96F91AFB06100016F779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D85A96C91AFB060F0016F779 /* Project object */;
+}
