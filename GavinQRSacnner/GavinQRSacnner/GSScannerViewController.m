@@ -186,7 +186,7 @@
     }
     
     // 条码类型 AVMetadataObjectTypeQRCode
-    output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
+    output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
     
     // Preview
     if (!preview) {
