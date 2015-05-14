@@ -29,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self buildUI];
+    
 }
 
 -(void)buildUI{
@@ -156,8 +157,8 @@
     return scaledImage;
 }
 
-
 -(void)goBack{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 @end

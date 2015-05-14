@@ -18,10 +18,12 @@
 		D85A97201AFB07930016F779 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A971F1AFB07930016F779 /* CoreVideo.framework */; };
 		D85A97221AFB079B0016F779 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A97211AFB079B0016F779 /* QuartzCore.framework */; };
 		D85A97241AFB07AB0016F779 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */; };
-		D85A972A1AFB18500016F779 /* GSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A97291AFB18500016F779 /* GSScannerViewController.m */; };
 		D85A972D1AFB1D5A0016F779 /* bg_scanner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */; };
 		D85A972F1AFB265A0016F779 /* icon_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A972E1AFB265A0016F779 /* icon_loading@2x.png */; };
-		D8C122181B020162002335F4 /* GSBuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C122171B020162002335F4 /* GSBuilderViewController.m */; };
+		D86B6A991B04492A0003AB0A /* GSBuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A961B04492A0003AB0A /* GSBuilderViewController.m */; };
+		D86B6A9A1B04492A0003AB0A /* GSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A981B04492A0003AB0A /* GSScannerViewController.m */; };
+		D86B6A9D1B0449450003AB0A /* GSScannerHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A9C1B0449450003AB0A /* GSScannerHistoryManager.m */; };
+		D86B6AA61B04609E0003AB0A /* GSScannerHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6AA51B04609E0003AB0A /* GSScannerHistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +53,16 @@
 		D85A971F1AFB07930016F779 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		D85A97211AFB079B0016F779 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = usr/lib/libiconv.2.4.0.dylib; sourceTree = SDKROOT; };
-		D85A97281AFB18500016F779 /* GSScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSScannerViewController.h; sourceTree = "<group>"; };
-		D85A97291AFB18500016F779 /* GSScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerViewController.m; sourceTree = "<group>"; };
 		D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_scanner@2x.png"; sourceTree = "<group>"; };
 		D85A972E1AFB265A0016F779 /* icon_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_loading@2x.png"; sourceTree = "<group>"; };
-		D8C122161B020162002335F4 /* GSBuilderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBuilderViewController.h; sourceTree = "<group>"; };
-		D8C122171B020162002335F4 /* GSBuilderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSBuilderViewController.m; sourceTree = "<group>"; };
+		D86B6A951B04492A0003AB0A /* GSBuilderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBuilderViewController.h; sourceTree = "<group>"; };
+		D86B6A961B04492A0003AB0A /* GSBuilderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSBuilderViewController.m; sourceTree = "<group>"; };
+		D86B6A971B04492A0003AB0A /* GSScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSScannerViewController.h; sourceTree = "<group>"; };
+		D86B6A981B04492A0003AB0A /* GSScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerViewController.m; sourceTree = "<group>"; };
+		D86B6A9B1B0449450003AB0A /* GSScannerHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSScannerHistoryManager.h; sourceTree = "<group>"; };
+		D86B6A9C1B0449450003AB0A /* GSScannerHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerHistoryManager.m; sourceTree = "<group>"; };
+		D86B6AA41B04609E0003AB0A /* GSScannerHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSScannerHistoryViewController.h; sourceTree = "<group>"; };
+		D86B6AA51B04609E0003AB0A /* GSScannerHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerHistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +114,12 @@
 		D85A96D31AFB06100016F779 /* GavinQRSacnner */ = {
 			isa = PBXGroup;
 			children = (
+				D86B6AA71B0462080003AB0A /* Vendors */,
+				D86B6A931B04492A0003AB0A /* Core */,
+				D86B6A941B04492A0003AB0A /* ViewControllers */,
 				D85A972B1AFB1D5A0016F779 /* Resources */,
 				D85A96D81AFB06100016F779 /* AppDelegate.h */,
 				D85A96D91AFB06100016F779 /* AppDelegate.m */,
-				D85A97281AFB18500016F779 /* GSScannerViewController.h */,
-				D85A97291AFB18500016F779 /* GSScannerViewController.m */,
-				D8C122161B020162002335F4 /* GSBuilderViewController.h */,
-				D8C122171B020162002335F4 /* GSBuilderViewController.m */,
 				D85A96DE1AFB06100016F779 /* Main.storyboard */,
 				D85A96E11AFB06100016F779 /* Images.xcassets */,
 				D85A96E31AFB06100016F779 /* LaunchScreen.xib */,
@@ -156,6 +161,35 @@
 				D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D86B6A931B04492A0003AB0A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D86B6A9B1B0449450003AB0A /* GSScannerHistoryManager.h */,
+				D86B6A9C1B0449450003AB0A /* GSScannerHistoryManager.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D86B6A941B04492A0003AB0A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D86B6A971B04492A0003AB0A /* GSScannerViewController.h */,
+				D86B6A981B04492A0003AB0A /* GSScannerViewController.m */,
+				D86B6A951B04492A0003AB0A /* GSBuilderViewController.h */,
+				D86B6A961B04492A0003AB0A /* GSBuilderViewController.m */,
+				D86B6AA41B04609E0003AB0A /* GSScannerHistoryViewController.h */,
+				D86B6AA51B04609E0003AB0A /* GSScannerHistoryViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D86B6AA71B0462080003AB0A /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8C122181B020162002335F4 /* GSBuilderViewController.m in Sources */,
-				D85A972A1AFB18500016F779 /* GSScannerViewController.m in Sources */,
+				D86B6A9A1B04492A0003AB0A /* GSScannerViewController.m in Sources */,
+				D86B6A9D1B0449450003AB0A /* GSScannerHistoryManager.m in Sources */,
+				D86B6AA61B04609E0003AB0A /* GSScannerHistoryViewController.m in Sources */,
+				D86B6A991B04492A0003AB0A /* GSBuilderViewController.m in Sources */,
 				D85A96DA1AFB06100016F779 /* AppDelegate.m in Sources */,
 				D85A96D71AFB06100016F779 /* main.m in Sources */,
 			);

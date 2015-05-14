@@ -9,6 +9,9 @@
 #import "GSScannerViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "GSBuilderViewController.h"
+#import "GSScannerHistoryViewController.h"
+
+#import "GSScannerHistoryManager.h"
 
 #define ScannerTop 120
 #define ScannerSize (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad?500:220)
@@ -123,6 +126,9 @@
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"生成" style:UIBarButtonItemStyleDone target:self action:@selector(goToGenerate)];
     self.navigationItem.rightBarButtonItem = item;
+    
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"历史" style:UIBarButtonItemStyleDone target:self action:@selector(goToHistory)];
+    self.navigationItem.leftBarButtonItem = item2;
 }
 
 -(void)scanAnimation
@@ -224,7 +230,11 @@
     
     [timer invalidate];
     
+    if (stringValue && stringValue.length > 0) {
+        [HistoryManager addHistoryItem:stringValue];
+    }
     resultTextView.text = stringValue;
+
 }
 #pragma mark - button actions
 -(void)copyResult{
@@ -259,6 +269,10 @@
 -(void)goToGenerate{
     GSBuilderViewController *vc = [[GSBuilderViewController alloc] init];
     vc.string = @"哈哈";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(void)goToHistory{
+    GSScannerHistoryViewController *vc = [[GSScannerHistoryViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 @end
