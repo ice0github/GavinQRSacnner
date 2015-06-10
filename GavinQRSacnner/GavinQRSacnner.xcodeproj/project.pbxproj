@@ -242,6 +242,7 @@
 				TargetAttributes = {
 					D85A96D01AFB060F0016F779 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4LK626QHZK;
 					};
 					D85A96E91AFB06100016F779 = {
 						CreatedOnToolsVersion = 6.3.1;

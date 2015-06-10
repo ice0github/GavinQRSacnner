@@ -32,10 +32,13 @@
 
 -(NSMutableArray *)history{
     if (!history) {
-         history = [[NSUserDefaults standardUserDefaults] objectForKey:kGSScannerHistory];
-        if (!history) {
-            history = [[NSMutableArray alloc] init];
+        history = [[NSMutableArray alloc] init];
+
+        NSArray *loadArray = [[NSUserDefaults standardUserDefaults] objectForKey:kGSScannerHistory];
+        if (!loadArray) {
             [self saveHistory];
+        }else{
+            [history addObjectsFromArray:loadArray];
         }
     }
     return history;
