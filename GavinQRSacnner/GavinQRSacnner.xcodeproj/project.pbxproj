@@ -24,6 +24,8 @@
 		D86B6A9A1B04492A0003AB0A /* GSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A981B04492A0003AB0A /* GSScannerViewController.m */; };
 		D86B6A9D1B0449450003AB0A /* GSScannerHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A9C1B0449450003AB0A /* GSScannerHistoryManager.m */; };
 		D86B6AA61B04609E0003AB0A /* GSScannerHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6AA51B04609E0003AB0A /* GSScannerHistoryViewController.m */; };
+		FA0526381F5026B600B8C70B /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0526371F5026B600B8C70B /* Photos.framework */; };
+		FA05263A1F50270700B8C70B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0526391F50270700B8C70B /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D86B6A9C1B0449450003AB0A /* GSScannerHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerHistoryManager.m; sourceTree = "<group>"; };
 		D86B6AA41B04609E0003AB0A /* GSScannerHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSScannerHistoryViewController.h; sourceTree = "<group>"; };
 		D86B6AA51B04609E0003AB0A /* GSScannerHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerHistoryViewController.m; sourceTree = "<group>"; };
+		FA0526371F5026B600B8C70B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		FA0526391F50270700B8C70B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA05263A1F50270700B8C70B /* AssetsLibrary.framework in Frameworks */,
+				FA0526381F5026B600B8C70B /* Photos.framework in Frameworks */,
 				D85A97241AFB07AB0016F779 /* libiconv.2.4.0.dylib in Frameworks */,
 				D85A97221AFB079B0016F779 /* QuartzCore.framework in Frameworks */,
 				D85A97201AFB07930016F779 /* CoreVideo.framework in Frameworks */,
@@ -99,6 +105,7 @@
 				D85A96D31AFB06100016F779 /* GavinQRSacnner */,
 				D85A96ED1AFB06100016F779 /* GavinQRSacnnerTests */,
 				D85A96D21AFB06100016F779 /* Products */,
+				FA0526361F5026B500B8C70B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +197,15 @@
 			children = (
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		FA0526361F5026B500B8C70B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA0526391F50270700B8C70B /* AssetsLibrary.framework */,
+				FA0526371F5026B600B8C70B /* Photos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,7 +451,7 @@
 				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chinasie.mp.jmgz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -452,7 +468,7 @@
 				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chinasie.mp.jmgz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

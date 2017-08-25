@@ -8,6 +8,8 @@
 
 #import "GSScannerViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 #import "GSBuilderViewController.h"
 #import "GSScannerHistoryViewController.h"
 
@@ -19,7 +21,7 @@
 #define ResultButtonWidth 80
 #define ResultButtonHeight 40
 
-@interface GSScannerViewController ()<AVCaptureMetadataOutputObjectsDelegate>
+@interface GSScannerViewController ()<AVCaptureMetadataOutputObjectsDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     
     AVCaptureDevice * device;
@@ -28,6 +30,8 @@
     AVCaptureSession * session;
     AVCaptureVideoPreviewLayer * preview;
     UIImageView *scannerBGView;
+    
+    UIImagePickerController *picker;
 
     
     UIImageView *line;
@@ -35,6 +39,8 @@
     BOOL upOrdown;
     NSTimer *timer;
     
+    
+    UIButton *fromAlbumButton;
     UITextView *resultTextView;
     UIButton *resultCopyButton;
     UIButton *resultOpenButton;
@@ -80,10 +86,23 @@
     line.backgroundColor = [UIColor greenColor];
     line.layer.cornerRadius = 8;
     [self.view addSubview:line];
+
     timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(scanAnimation) userInfo:nil repeats:YES];
     
+    fromAlbumButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    fromAlbumButton.frame = CGRectMake(10,
+                                        ScannerTop+ScannerSize+60,
+                                        ResultButtonWidth,
+                                        ResultButtonHeight*2);
+    fromAlbumButton.backgroundColor = [UIColor colorWithRed:0.536 green:0.75 blue:0.5 alpha:1.000];
+    fromAlbumButton.titleLabel.numberOfLines = 3;
+    fromAlbumButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [fromAlbumButton setTitle:@"识别\n相册\n图片" forState:UIControlStateNormal];
+    [fromAlbumButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview:fromAlbumButton];
+    
     resultTextView = [[UITextView alloc] init];
-    resultTextView.frame = CGRectMake(10, ScannerTop+ScannerSize+60, self.view.bounds.size.width-10*2-ResultButtonWidth-5, ResultButtonHeight*2+1);
+    resultTextView.frame = CGRectMake(CGRectGetMaxX(fromAlbumButton.frame)+5, ScannerTop+ScannerSize+60, self.view.bounds.size.width-10*2-ResultButtonWidth*2-5*2, ResultButtonHeight*2+1);
     resultTextView.editable = NO;
     resultTextView.layer.borderWidth = 0.5;
     resultTextView.layer.borderColor = [UIColor grayColor].CGColor;
@@ -120,6 +139,7 @@
     [self.view addSubview:scanButton];
     
     
+    [fromAlbumButton addTarget:self action:@selector(fromAlbum) forControlEvents:UIControlEventTouchUpInside];
     [resultCopyButton addTarget:self action:@selector(copyResult) forControlEvents:UIControlEventTouchUpInside];
     [resultOpenButton addTarget:self action:@selector(openResult) forControlEvents:UIControlEventTouchUpInside];
     [scanButton addTarget:self action:@selector(startScan) forControlEvents:UIControlEventTouchUpInside];
@@ -236,7 +256,104 @@
     resultTextView.text = stringValue;
 
 }
+
+
+
+#pragma mark -- 从图片识别二维码
+// 获取图片后的操作
+- (void)imagePickerController:(UIImagePickerController *)apicker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    picker = nil;
+
+    [apicker dismissViewControllerAnimated:YES completion:^{
+        [self analysisQRCode:image];
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)apicker{
+    picker = nil;
+
+    [apicker dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
+// 解析图片
+- (void)analysisQRCode:(UIImage *)orgImage{
+    if (orgImage) {
+        CIContext *context = [CIContext contextWithOptions:nil];
+        CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+        CIImage *image = [CIImage imageWithCGImage:orgImage.CGImage];
+        NSArray *features = [detector featuresInImage:image];
+        CIQRCodeFeature *feature = [features firstObject];
+        
+        NSString *stringValue = feature.messageString;
+        
+        if (stringValue && stringValue.length > 0) {
+            [HistoryManager addHistoryItem:stringValue];
+        }else{
+            stringValue = @"未解析到数据，请确认图片是否为二维码";
+        }
+        resultTextView.text = stringValue;
+    }
+}
+
+// 判断相册权限
+- (BOOL)getPhotoAuthorizationStatus
+{
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        switch (status) {
+            case PHAuthorizationStatusNotDetermined:
+                return YES;
+            case PHAuthorizationStatusAuthorized:
+                return YES;
+            case PHAuthorizationStatusDenied:
+                return NO;
+            case PHAuthorizationStatusRestricted:
+                return NO;
+            default:
+                return YES;
+        }
+    }
+    
+    ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
+    switch (status) {
+        case ALAuthorizationStatusNotDetermined:
+            return YES;
+        case ALAuthorizationStatusAuthorized:
+            return YES;
+        case ALAuthorizationStatusDenied:
+            return NO;
+        case ALAuthorizationStatusRestricted:
+            return NO;
+        default:
+            return YES;
+    }
+}
+
 #pragma mark - button actions
+- (void)fromAlbum{
+    if (picker) {
+        return;
+    }
+    
+    if (
+        ![self getPhotoAuthorizationStatus] ||
+        ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Tips" message:@"没有获得相册的使用权限或者设备不支持相册功能" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"OK" style:0 handler:nil];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+     return;
+    }
+    
+    picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
 -(void)copyResult{
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = resultTextView.text;
