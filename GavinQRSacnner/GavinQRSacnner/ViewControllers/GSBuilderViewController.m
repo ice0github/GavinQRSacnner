@@ -28,16 +28,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self buildUI];
-    
-}
-
--(void)buildUI{
     self.title = @"生成二维码";
     self.view.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.000];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
 
-    float y = 20+44+10;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [self buildUI];
+}
+
+-(void)buildUI{
+    
+    CGFloat y = 20+44+10;
+    
+    if (@available(iOS 11.0, *)) {
+        y = y + self.view.safeAreaInsets.bottom;
+    }
     
     tf = [[UITextField alloc] init];
     tf.frame = CGRectMake(10, y, self.view.bounds.size.width-10*2-3-BuilderButtonWidth, BuilderTextFieldHeight);
@@ -99,16 +107,25 @@
     if (iv.image) {
         UIImageWriteToSavedPhotosAlbum(iv.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     }else{
-        [[[UIAlertView alloc] initWithTitle:@"提示" message:@"未发现二维码" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles: nil] show];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"未发现二维码" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
     }
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
-    [[[UIAlertView alloc] initWithTitle:@"提示"
-                                message:error?@"保存失败":@"保存成功"
-                               delegate:self
-                      cancelButtonTitle:@"知道了"
-                      otherButtonTitles:nil] show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                   message:error?@"保存失败":@"保存成功"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)endEdit{

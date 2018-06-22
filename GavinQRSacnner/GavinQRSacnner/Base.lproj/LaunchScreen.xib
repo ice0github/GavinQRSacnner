@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,25 +15,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_loading.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lqr-l5-tNE">
-                    <rect key="frame" x="100" y="33.5" width="175" height="600"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="600" id="lam-Nd-Zce"/>
-                    </constraints>
-                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gavin Scanner" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylm-1S-2Jf">
+                    <rect key="frame" x="117.5" y="286.5" width="141.5" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="0.5725490196078431" green="0.9137254901960784" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.53333333333333333" green="0.80392156862745101" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Lqr-l5-tNE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="248-M6-2qX"/>
-                <constraint firstAttribute="trailing" secondItem="Lqr-l5-tNE" secondAttribute="trailing" constant="100" id="O7e-Rx-X3J"/>
-                <constraint firstAttribute="centerY" secondItem="Lqr-l5-tNE" secondAttribute="centerY" id="Sl0-ba-NSp"/>
-                <constraint firstAttribute="centerX" secondItem="Lqr-l5-tNE" secondAttribute="centerX" id="dNh-W2-GX6"/>
+                <constraint firstItem="Ylm-1S-2Jf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KWs-On-Ek2"/>
+                <constraint firstItem="Ylm-1S-2Jf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NVr-RL-Vv7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
-    <resources>
-        <image name="icon_loading.png" width="256" height="256"/>
-    </resources>
 </document>

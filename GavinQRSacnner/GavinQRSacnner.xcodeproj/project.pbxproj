@@ -17,15 +17,14 @@
 		D85A971E1AFB078C0016F779 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A971D1AFB078C0016F779 /* CoreMedia.framework */; };
 		D85A97201AFB07930016F779 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A971F1AFB07930016F779 /* CoreVideo.framework */; };
 		D85A97221AFB079B0016F779 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A97211AFB079B0016F779 /* QuartzCore.framework */; };
-		D85A97241AFB07AB0016F779 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */; };
 		D85A972D1AFB1D5A0016F779 /* bg_scanner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */; };
-		D85A972F1AFB265A0016F779 /* icon_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A972E1AFB265A0016F779 /* icon_loading@2x.png */; };
 		D86B6A991B04492A0003AB0A /* GSBuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A961B04492A0003AB0A /* GSBuilderViewController.m */; };
 		D86B6A9A1B04492A0003AB0A /* GSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A981B04492A0003AB0A /* GSScannerViewController.m */; };
 		D86B6A9D1B0449450003AB0A /* GSScannerHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6A9C1B0449450003AB0A /* GSScannerHistoryManager.m */; };
 		D86B6AA61B04609E0003AB0A /* GSScannerHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B6AA51B04609E0003AB0A /* GSScannerHistoryViewController.m */; };
 		FA0526381F5026B600B8C70B /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0526371F5026B600B8C70B /* Photos.framework */; };
 		FA05263A1F50270700B8C70B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0526391F50270700B8C70B /* AssetsLibrary.framework */; };
+		FA73936820DCC19200D2524C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA73936720DCC19200D2524C /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +53,7 @@
 		D85A971D1AFB078C0016F779 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D85A971F1AFB07930016F779 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		D85A97211AFB079B0016F779 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = usr/lib/libiconv.2.4.0.dylib; sourceTree = SDKROOT; };
 		D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_scanner@2x.png"; sourceTree = "<group>"; };
-		D85A972E1AFB265A0016F779 /* icon_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_loading@2x.png"; sourceTree = "<group>"; };
 		D86B6A951B04492A0003AB0A /* GSBuilderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBuilderViewController.h; sourceTree = "<group>"; };
 		D86B6A961B04492A0003AB0A /* GSBuilderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSBuilderViewController.m; sourceTree = "<group>"; };
 		D86B6A971B04492A0003AB0A /* GSScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSScannerViewController.h; sourceTree = "<group>"; };
@@ -67,6 +64,7 @@
 		D86B6AA51B04609E0003AB0A /* GSScannerHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSScannerHistoryViewController.m; sourceTree = "<group>"; };
 		FA0526371F5026B600B8C70B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		FA0526391F50270700B8C70B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		FA73936720DCC19200D2524C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA73936820DCC19200D2524C /* SafariServices.framework in Frameworks */,
 				FA05263A1F50270700B8C70B /* AssetsLibrary.framework in Frameworks */,
 				FA0526381F5026B600B8C70B /* Photos.framework in Frameworks */,
-				D85A97241AFB07AB0016F779 /* libiconv.2.4.0.dylib in Frameworks */,
 				D85A97221AFB079B0016F779 /* QuartzCore.framework in Frameworks */,
 				D85A97201AFB07930016F779 /* CoreVideo.framework in Frameworks */,
 				D85A971E1AFB078C0016F779 /* CoreMedia.framework in Frameworks */,
@@ -97,7 +95,6 @@
 		D85A96C81AFB060F0016F779 = {
 			isa = PBXGroup;
 			children = (
-				D85A97231AFB07AB0016F779 /* libiconv.2.4.0.dylib */,
 				D85A97211AFB079B0016F779 /* QuartzCore.framework */,
 				D85A971F1AFB07930016F779 /* CoreVideo.framework */,
 				D85A971D1AFB078C0016F779 /* CoreMedia.framework */,
@@ -121,7 +118,6 @@
 		D85A96D31AFB06100016F779 /* GavinQRSacnner */ = {
 			isa = PBXGroup;
 			children = (
-				D86B6AA71B0462080003AB0A /* Vendors */,
 				D86B6A931B04492A0003AB0A /* Core */,
 				D86B6A941B04492A0003AB0A /* ViewControllers */,
 				D85A972B1AFB1D5A0016F779 /* Resources */,
@@ -164,7 +160,6 @@
 		D85A972B1AFB1D5A0016F779 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D85A972E1AFB265A0016F779 /* icon_loading@2x.png */,
 				D85A972C1AFB1D5A0016F779 /* bg_scanner@2x.png */,
 			);
 			path = Resources;
@@ -192,16 +187,10 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		D86B6AA71B0462080003AB0A /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
 		FA0526361F5026B500B8C70B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA73936720DCC19200D2524C /* SafariServices.framework */,
 				FA0526391F50270700B8C70B /* AssetsLibrary.framework */,
 				FA0526371F5026B600B8C70B /* Photos.framework */,
 			);
@@ -253,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GS;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Gavin;
 				TargetAttributes = {
 					D85A96D01AFB060F0016F779 = {
@@ -292,7 +281,6 @@
 			files = (
 				D85A972D1AFB1D5A0016F779 /* bg_scanner@2x.png in Resources */,
 				D85A96E01AFB06100016F779 /* Main.storyboard in Resources */,
-				D85A972F1AFB265A0016F779 /* icon_loading@2x.png in Resources */,
 				D85A96E51AFB06100016F779 /* LaunchScreen.xib in Resources */,
 				D85A96E21AFB06100016F779 /* Images.xcassets in Resources */,
 			);
@@ -367,19 +355,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -395,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -411,13 +410,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -433,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,16 +454,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gavin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavinsacnner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,16 +474,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gavin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gavinsacnner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -489,6 +504,7 @@
 				);
 				INFOPLIST_FILE = GavinQRSacnnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gavin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GavinQRSacnner.app/GavinQRSacnner";
 			};
@@ -504,6 +520,7 @@
 				);
 				INFOPLIST_FILE = GavinQRSacnnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gavin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GavinQRSacnner.app/GavinQRSacnner";
 			};

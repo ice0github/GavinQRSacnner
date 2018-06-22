@@ -7,15 +7,19 @@
 //
 
 #import "GSScannerHistoryViewController.h"
+#import <SafariServices/SafariServices.h>
+
 #import "GSScannerHistoryManager.h"
 
-@interface GSScannerHistoryViewController ()<UITableViewDataSource,UITableViewDelegate>{
+@interface GSScannerHistoryViewController ()<UITableViewDataSource,UITableViewDelegate,SFSafariViewControllerDelegate>{
     UITableView *tb;
     
     UIView *detailView;
     UIView *detailBG;
     UITextView *tv;
     NSIndexPath *lastSelected;
+    
+    SFSafariViewController *sfWebVC;
 }
 
 @end
@@ -118,32 +122,50 @@
     [self showDetailView];
 }
 
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
+    [sfWebVC dismissViewControllerAnimated:YES completion:^{
+        sfWebVC = nil;
+    }];
+}
+
 -(void)copyHistory{
     NSString *text = tv.text;
     [self dismissDetailView];
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = text;
-    [[[UIAlertView alloc] initWithTitle:@"提示"
-                                message:@"目标链接已复制到粘贴板"
-                               delegate:nil
-                      cancelButtonTitle:@"知道了"
-                      otherButtonTitles:nil]
-     show];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                   message:@"目标链接已复制到粘贴板"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)openHistory{
     NSString *text = tv.text;
     [self dismissDetailView];
+    
     NSURL *targetUrl = [NSURL URLWithString:text];
-    if ([[UIApplication sharedApplication] canOpenURL:targetUrl]) {
-        [[UIApplication sharedApplication] openURL:targetUrl];
-    }else{
-        [[[UIAlertView alloc] initWithTitle:@"提示"
-                                    message:@"目标链接无法打开"
-                                   delegate:nil
-                          cancelButtonTitle:@"知道了"
-                          otherButtonTitles:nil]
-         show];
+   
+    if (targetUrl){
+        NSString *tmp = [targetUrl.absoluteString lowercaseString];
+        if (tmp && ([tmp hasPrefix:@"http://"] || [tmp hasPrefix:@"https://"])){
+            sfWebVC = [[SFSafariViewController alloc] initWithURL:targetUrl];
+            sfWebVC.delegate = self;
+            [self presentViewController:sfWebVC animated:YES completion:nil];
+        }else{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                           message:@"只支持打开http和https协议的URL"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        }
     }
 }
 

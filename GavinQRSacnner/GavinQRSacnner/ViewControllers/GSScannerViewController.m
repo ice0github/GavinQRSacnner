@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <Photos/Photos.h>
+#import <SafariServices/SafariServices.h>
+
 #import "GSBuilderViewController.h"
 #import "GSScannerHistoryViewController.h"
 
@@ -21,7 +23,7 @@
 #define ResultButtonWidth 80
 #define ResultButtonHeight 40
 
-@interface GSScannerViewController ()<AVCaptureMetadataOutputObjectsDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface GSScannerViewController ()<AVCaptureMetadataOutputObjectsDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,SFSafariViewControllerDelegate>
 {
     
     AVCaptureDevice * device;
@@ -46,6 +48,8 @@
     UIButton *resultOpenButton;
     
     UIButton *scanButton;
+    
+    SFSafariViewController *sfWebVC;
 }
 
 
@@ -317,19 +321,26 @@
         }
     }
     
-    ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
+    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     switch (status) {
-        case ALAuthorizationStatusNotDetermined:
+        case PHAuthorizationStatusNotDetermined:
             return YES;
-        case ALAuthorizationStatusAuthorized:
+        case PHAuthorizationStatusAuthorized:
             return YES;
-        case ALAuthorizationStatusDenied:
+        case PHAuthorizationStatusDenied:
             return NO;
-        case ALAuthorizationStatusRestricted:
+        case PHAuthorizationStatusRestricted:
             return NO;
         default:
             return YES;
     }
+}
+
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
+    [sfWebVC dismissViewControllerAnimated:YES completion:^{
+        sfWebVC = nil;
+    }];
 }
 
 #pragma mark - button actions
@@ -357,25 +368,37 @@
 -(void)copyResult{
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = resultTextView.text;
-    [[[UIAlertView alloc] initWithTitle:@"提示"
-                                message:@"目标链接已复制到粘贴板"
-                               delegate:nil
-                      cancelButtonTitle:@"知道了"
-                      otherButtonTitles:nil]
-     show];
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                   message:@"目标链接已复制到粘贴板"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+
 }
 
 -(void)openResult{
     NSURL *targetUrl = [NSURL URLWithString:resultTextView.text];
-    if ([[UIApplication sharedApplication] canOpenURL:targetUrl]) {
-        [[UIApplication sharedApplication] openURL:targetUrl];
-    }else{
-        [[[UIAlertView alloc] initWithTitle:@"提示"
-                                    message:@"目标链接无法打开"
-                                   delegate:nil
-                          cancelButtonTitle:@"知道了"
-                          otherButtonTitles:nil]
-         show];
+    
+    if (targetUrl){
+        NSString *tmp = [targetUrl.absoluteString lowercaseString];
+        if (tmp && ([tmp hasPrefix:@"http://"] || [tmp hasPrefix:@"https://"])){
+            sfWebVC = [[SFSafariViewController alloc] initWithURL:targetUrl];
+            sfWebVC.delegate = self;
+            [self presentViewController:sfWebVC animated:YES completion:nil];
+        }else{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                           message:@"只支持打开http和https协议的URL"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        }
     }
 }
 
