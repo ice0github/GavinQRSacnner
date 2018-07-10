@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GSSetting.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [GSSetting setting].openURLByChromeAtFirst = YES;
+    
     return YES;
 }
 

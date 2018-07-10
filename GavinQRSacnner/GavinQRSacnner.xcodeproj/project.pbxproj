@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		973FB56C20F4B73900AD31C1 /* GSSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 973FB56B20F4B73900AD31C1 /* GSSetting.m */; };
 		D85A96D71AFB06100016F779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A96D61AFB06100016F779 /* main.m */; };
 		D85A96DA1AFB06100016F779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A96D91AFB06100016F779 /* AppDelegate.m */; };
 		D85A96E01AFB06100016F779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85A96DE1AFB06100016F779 /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		973FB56A20F4B73900AD31C1 /* GSSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSSetting.h; sourceTree = "<group>"; };
+		973FB56B20F4B73900AD31C1 /* GSSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSSetting.m; sourceTree = "<group>"; };
 		D85A96D11AFB06100016F779 /* GavinQRSacnner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GavinQRSacnner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85A96D51AFB06100016F779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D85A96D61AFB06100016F779 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 			children = (
 				D86B6A9B1B0449450003AB0A /* GSScannerHistoryManager.h */,
 				D86B6A9C1B0449450003AB0A /* GSScannerHistoryManager.m */,
+				973FB56A20F4B73900AD31C1 /* GSSetting.h */,
+				973FB56B20F4B73900AD31C1 /* GSSetting.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -247,7 +252,8 @@
 				TargetAttributes = {
 					D85A96D01AFB060F0016F779 = {
 						CreatedOnToolsVersion = 6.3.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = RYA3R8S93A;
+						ProvisioningStyle = Automatic;
 					};
 					D85A96E91AFB06100016F779 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -303,6 +309,7 @@
 				D86B6A9A1B04492A0003AB0A /* GSScannerViewController.m in Sources */,
 				D86B6A9D1B0449450003AB0A /* GSScannerHistoryManager.m in Sources */,
 				D86B6AA61B04609E0003AB0A /* GSScannerHistoryViewController.m in Sources */,
+				973FB56C20F4B73900AD31C1 /* GSSetting.m in Sources */,
 				D86B6A991B04492A0003AB0A /* GSBuilderViewController.m in Sources */,
 				D85A96DA1AFB06100016F779 /* AppDelegate.m in Sources */,
 				D85A96D71AFB06100016F779 /* main.m in Sources */,
@@ -457,12 +464,12 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYA3R8S93A;
 				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gavinsacnner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinasie.vchatplus.project012;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -477,12 +484,12 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYA3R8S93A;
 				INFOPLIST_FILE = GavinQRSacnner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gavinsacnner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinasie.vchatplus.project012;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

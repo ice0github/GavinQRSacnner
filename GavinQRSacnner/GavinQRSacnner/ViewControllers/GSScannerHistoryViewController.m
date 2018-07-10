@@ -10,6 +10,7 @@
 #import <SafariServices/SafariServices.h>
 
 #import "GSScannerHistoryManager.h"
+#import "GSSetting.h"
 
 @interface GSScannerHistoryViewController ()<UITableViewDataSource,UITableViewDelegate,SFSafariViewControllerDelegate>{
     UITableView *tb;
@@ -153,9 +154,11 @@
     if (targetUrl){
         NSString *tmp = [targetUrl.absoluteString lowercaseString];
         if (tmp && ([tmp hasPrefix:@"http://"] || [tmp hasPrefix:@"https://"])){
-            sfWebVC = [[SFSafariViewController alloc] initWithURL:targetUrl];
-            sfWebVC.delegate = self;
-            [self presentViewController:sfWebVC animated:YES completion:nil];
+            if (![self goToChrome:targetUrl]) {
+                sfWebVC = [[SFSafariViewController alloc] initWithURL:targetUrl];
+                sfWebVC.delegate = self;
+                [self presentViewController:sfWebVC animated:YES completion:nil];
+            }
         }else{
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
                                                                            message:@"只支持打开http和https协议的URL"
@@ -167,6 +170,41 @@
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
         }
     }
+}
+
+- (BOOL)goToChrome:(NSURL*)inputURL{
+    if (![GSSetting setting].openURLByChromeAtFirst){
+        return NO;
+    }
+    
+    NSString *scheme = inputURL.scheme?[inputURL.scheme lowercaseString]:@"";
+    
+    // Replace the URL Scheme with the Chrome equivalent.
+    NSString *chromeScheme = nil;
+    if ([scheme isEqualToString:@"http"]) {
+        chromeScheme = @"googlechrome";
+    } else if ([scheme isEqualToString:@"https"]) {
+        chromeScheme = @"googlechromes";
+    }
+    
+    // Proceed only if a valid Google Chrome URI Scheme is available.
+    if (chromeScheme) {
+        NSString *absoluteString = [inputURL absoluteString];
+        NSRange rangeForScheme = [absoluteString rangeOfString:@":"];
+        NSString *urlNoScheme =
+        [absoluteString substringFromIndex:rangeForScheme.location];
+        NSString *chromeURLString = [chromeScheme stringByAppendingString:urlNoScheme];
+        NSURL *chromeURL = [NSURL URLWithString:chromeURLString];
+        
+        // Open the URL with Chrome.
+        if ([[UIApplication sharedApplication] canOpenURL:chromeURL]) {
+            [[UIApplication sharedApplication] openURL:chromeURL options:@{} completionHandler:^(BOOL success) {
+                
+            }];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 -(void)cleanHistory{
